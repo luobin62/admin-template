@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'SGMW 芯片管理平台',
 
   /**
    * @type {boolean} true | false
@@ -13,4 +13,5 @@ module.exports = {
    * @description Whether show the logo in sidebar
    */
   sidebarLogo: true,
+  systemName: 'chip',
 }

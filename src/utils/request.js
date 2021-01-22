@@ -4,6 +4,7 @@ import store from '@/store'
 import router from '@/router'
 import { logout } from '@/api/sys/user'
 import { getToken, getUserName, getUserId } from '@/utils/auth'
+import defaultSettings from '@/settings'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -22,7 +23,7 @@ service.interceptors.request.use(
 
     userId && (config.headers.userId = userId)
     userName && (config.headers.userName = encodeURIComponent(userName))
-    config.headers.systemName = 'chip'
+    config.headers.systemName = `${defaultSettings.systemName}`
     /* 判断请求时是否拿到了token，如果拿到token后，给请求头加上token
        如果没有token且当前的路由不是登录路由，认为不合法，就做登出操作 */
     if (store.getters.token) {

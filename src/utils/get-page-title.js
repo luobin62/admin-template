@@ -1,7 +1,6 @@
-/* import defaultSettings from '@/settings'
+import defaultSettings from '@/settings'
 
-const title = defaultSettings.title || '芯片管理平台'*/
-const title = '芯片管理平台'
+const title = defaultSettings.title
 
 export default function getPageTitle(pageTitle) {
   if (pageTitle) {

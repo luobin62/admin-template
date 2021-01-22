@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 import { getUserId } from '@/utils/auth'
-
+import defaultSettings from '@/settings'
 export function login(data) {
   return request({
     baseURL: '/api',
@@ -31,7 +31,8 @@ export function getMenu() {
   const id = getUserId()
   return request({
     baseURL: '/api',
-    url: '/menu/findNavTree?systemName=chip&userId=' + id,
+    /* url: '/menu/findNavTree?systemName=defaultSettings.systemName&userId=' + id,*/
+    url: `/menu/findNavTree?systemName=${defaultSettings.systemName}&userId=` + id,
     method: 'get',
   })
 }

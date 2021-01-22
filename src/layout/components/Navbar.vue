@@ -7,6 +7,9 @@
     <breadcrumb class="breadcrumb-container" />
     <!--导航栏右侧内容-->
     <div class="right-menu">
+      <template>
+        <Screenfull id="screenfull" class="right-menu-item hover-effect" style="padding:10px;" />
+      </template>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80" class="user-avatar">
@@ -37,6 +40,7 @@ import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 import Dialog from '@/layout/components/Dialog'
+import Screenfull from '@/components/Screenfull'
 import { resetPassword } from '@/api/sys/user'
 import md5 from 'md5'
 
@@ -45,6 +49,7 @@ export default {
     Breadcrumb,
     Hamburger,
     Dialog,
+    Screenfull,
   },
   data() {
     return {

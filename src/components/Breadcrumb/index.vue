@@ -11,7 +11,7 @@
 
 <script>
 import pathToRegexp from 'path-to-regexp'
-
+import defaultSettings from '@/settings'
 export default {
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
       if (!this.isDashboard(first)) {
         // 为了具体的项目名称，故更新了名称和路径，点击后跳转到首页
         // matched = [{ path: '/Intro', meta: { title: 'Dashboard' }}].concat(matched)
-        matched = [ { path: '/', meta: { title: '芯片管理平台', }, }, ].concat(matched)
+        matched = [ { path: '/', meta: { title: defaultSettings.title, }, }, ].concat(matched)
       }
 
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
@@ -47,7 +47,7 @@ export default {
       }
       // 为了具体的项目名称，故更新了名称
       // return name.trim().toLocaleLowerCase() === 'Dashboard'.toLocaleLowerCase()
-      return name.trim().toLocaleLowerCase() === '芯片管理平台'.toLocaleLowerCase()
+      return name.trim().toLocaleLowerCase() === defaultSettings.title.toLocaleLowerCase()
     },
     pathCompile(path) {
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
